@@ -46,3 +46,4 @@
  #	- sadu s názvy typů hodnot czechia_payroll_value_type
  #- připojit také informace o cenách potravin czechia_price a jejich kategoriích pro lepší přehlednost czechia_price_category
  #- není nutno připojovat sadu czechia_payroll_calculation, protože stejné údaje již czehia_payroll obsahuje ve sloupci calculation_code
+
