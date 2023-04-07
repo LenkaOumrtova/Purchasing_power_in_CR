@@ -73,6 +73,76 @@ ON pay.payroll_year = year(price.date_from)
 JOIN czechia_price_category price_cat
 ON price.category_code = price_cat.code
 ;
+
+/*
+ * č. 1 Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+ */
+
+SELECT
+	DISTINCT payroll_year
+FROM czechia_payroll cp
+ORDER BY payroll_year DESC
+;
+
+
+SELECT
+	round(AVG(average_salary), 2) AS average_salary_number,
+	statistical_variable,
+	branch_code,
+	payroll_year
+FROM t_Lenka_Oumrtova_project_SQL_primary_final tlopspf
+WHERE average_salary IS NOT NULL
+	AND statistical_variable = '5958'
+	AND payroll_year = '2017'
+	AND branch_code = 'A'
+UNION
+SELECT
+	round(AVG(average_salary), 2) AS average_salary_number,
+	statistical_variable,
+	branch_code,
+	payroll_year
+FROM t_Lenka_Oumrtova_project_SQL_primary_final tlopspf
+WHERE average_salary IS NOT NULL
+	AND statistical_variable = '5958'
+	AND payroll_year = '2018'
+	AND branch_code = 'A'
+UNION
+SELECT
+	round(AVG(average_salary), 2) AS average_salary_number,
+	statistical_variable,
+	branch_code,
+	payroll_year
+FROM t_Lenka_Oumrtova_project_SQL_primary_final tlopspf
+WHERE average_salary IS NOT NULL
+	AND statistical_variable = '5958'
+	AND payroll_year = '2019'
+	AND branch_code = 'A'
+UNION
+SELECT
+	round(AVG(average_salary), 2) AS average_salary_number,
+	statistical_variable,
+	branch_code,
+	payroll_year
+FROM t_Lenka_Oumrtova_project_SQL_primary_final tlopspf
+WHERE average_salary IS NOT NULL
+	AND statistical_variable = '5958'
+	AND payroll_year = '2020'
+	AND branch_code = 'A'
+UNION
+SELECT
+	round(AVG(average_salary), 2) AS average_salary_number,
+	statistical_variable,
+	branch_code,
+	payroll_year
+FROM t_Lenka_Oumrtova_project_SQL_primary_final tlopspf
+WHERE average_salary IS NOT NULL
+	AND statistical_variable = '5958'
+	AND payroll_year = '2017'
+	AND branch_code = 'B'
+;
+
+
+
 """
 
 
