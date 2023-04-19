@@ -1,3 +1,4 @@
+Na Discordu přezdívka: Léňa O.
 USE engeto_2023_02;
 
 
