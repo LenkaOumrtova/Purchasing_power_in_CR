@@ -40,12 +40,12 @@ FROM czechia_price_category cpc;
 * statistical_unit = 200 KČ nebo 80403 tisíce osob
 * employee_code = 100 reálný počet zaměstnanců nebo 200 zaměstnanci přepočetni na hlavní prac.poměr
 * branch_code = kód odvětví: A Zemědělství, B Těžba, C Zpracovatelský prům., D Výroba a rozvod energií,
-* \t\t\t\t\t\t\t  E Vodohospodářství, F Stavebnictví, G Obchod a údržba motorových vozidel,
-* \t\t\t\t\t\t\t  H Doprava a skladování, I Ubytování, stravování a pohostinství
-* \t\t\t\t\t\t\t  J IT, K Peněžnictví a pojišťovnictví, L Činnosti v oblasti nemovitostí
-* \t\t\t\t\t\t\t  M Profesní, vědecké a technické činnosti, N Administrativní a podpůrné činnosti
-* \t\t\t\t\t\t\t  O Veřejná správa a obrana, P Vzdělávání, Q Zdravotní a sociální péče
-* \t\t\t\t\t\t\t  R Kulturní, zábavní a rekreační činnosti, S Ostatní činnosti
+* 							  E Vodohospodářství, F Stavebnictví, G Obchod a údržba motorových vozidel,
+* 							  H Doprava a skladování, I Ubytování, stravování a pohostinství
+* 							  J IT, K Peněžnictví a pojišťovnictví, L Činnosti v oblasti nemovitostí
+* 							  M Profesní, vědecké a technické činnosti, N Administrativní a podpůrné činnosti
+* 							  O Veřejná správa a obrana, P Vzdělávání, Q Zdravotní a sociální péče
+* 							  R Kulturní, zábavní a rekreační činnosti, S Ostatní činnosti
 *
 *
 */
@@ -73,10 +73,10 @@ ON pay.payroll_year = year(price.date_from)
 JOIN czechia_price_category price_cat
 ON price.category_code = price_cat.code
 ;
-
+ 
 /*
  * č. 1 Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
- */
+*/
 
 SELECT
 	DISTINCT payroll_year
