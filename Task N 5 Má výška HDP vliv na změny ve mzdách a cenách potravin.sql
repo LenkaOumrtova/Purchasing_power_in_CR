@@ -1,30 +1,17 @@
+/*
+ * č. 5 Má výška HDP vliv na změny ve mzdách a cenách potravin? 
+ * Neboli, pokud HDP vzroste výrazněji v jednom roce, 
+ * projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
+ */
+
 SELECT
-	t.payroll_year,
-	e.GDP,
-	t.food_name,
-	t.food_price,
-	t.average_salary
-FROM 
-(SELECT
-	country,
-	round(GDP,0) AS GDP,
-	`year`
-FROM economies e 
-WHERE country = 'Czech Republic'
-	AND GDP IS NOT NULL
-	AND `year` >= '2006' AND `year` <= '2018') AS GDP_resume
-JOIN 
-	ON e.`year` = t.payroll_year
-(SELECT
-	food_name,
-	food_price,
-	average_salary,
-	payroll_year
-FROM t_lenka_oumrtova_project_sql_primary_final t
-WHERE food_price IN (
-	SELECT avg(value)
-	FROM czechia_price)
-	AND statistical_variable = '5958') AS food_salary_resume
-GROUP BY payroll_year
-ORDER BY payroll_year
+	t.`year`,
+	t1.`year` AS previous_year,
+	round((t.food_price - t1.food_price) / t1.food_price * 100, 1) AS food_price_growth,
+	round((t.average_salary - t1.average_salary) / t1.average_salary * 100, 1) AS salary_growth,
+	round((t.GDP - t1.GDP) / t1.GDP  * 100,1) AS gdp_growth
+FROM t_lena_oumrtova_project_sql_primary_final t
+JOIN t_lena_oumrtova_project_sql_primary_final t1 
+	ON t.`year` = t1.`year` + 1
+GROUP BY `year`
 ;
