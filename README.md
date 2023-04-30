@@ -17,7 +17,7 @@ Poznámky k řešení
 2. Výzkumné otázky
 	1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 		- z dlouhodobého hlediska rostou mzdy ve všech odvětvích
-		- z roku na rok v některých odvětvích klesly, viz tabulka a přiložený pomocný excel soubor
+		- z roku na rok v některých odvětvích klesly
 
 	2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
 		- chléb 2006: 723 ks, 2018: 916 ks
@@ -54,5 +54,4 @@ Tvorba tabulky s českými daty _primary_final:
 - přidání tabulky economies proběhlo až při zpracovávání 5. úkolu, protože se tato cesta ukázala nejschůdnější.
 
 Práce s daty k zodpovězení výzkumných otázek:
-- po úpravě základní tabulky _primary_final byla již tvorba samotných dotazovacích sql skriptů snazší
-- pro otázky 1, 3 a 5 existuje pomocný excelový soubor, díky kterému byla data následně snáze analyzována.
+- po úpravě základní tabulky _primary_final byla již tvorba samotných dotazovacích sql skriptů snazší.
