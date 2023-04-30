@@ -1,12 +1,14 @@
 Lenka Oumrtová
 Datová akademie ENGETO
 SQL Projekt
+
 Kupní síla v České republice
+
 Obsah
-	Zadání projektu
-	Výzkumné otázky
-	Výstup
-	Poznámky k řešení
+Zadání projektu
+Výzkumné otázky
+Výstup
+Poznámky k řešení
 
 1. Zadání projektu
 	Projekt týkající se životní úrovní občanů, jehož cílem je zjištění dostupnosti základních potravin široké veřejnosti. Prostřednictvím vydefinovaných otázek bude analyzována životní úroveň občanů ČR. Zodpovězené otázky a výsledky analýzy bude tiskové oddělení následně prezentovat na tiskové konferenci. Pro realizaci analýzy je třeba připravit robustní datové podklady, ve kterých bude možné vidět porovnání dostupnosti potravin na základě průměrných příjmů za určité časové období.
