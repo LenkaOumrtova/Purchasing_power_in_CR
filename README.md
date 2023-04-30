@@ -1,10 +1,7 @@
 Lenka Oumrtová
 Datová akademie ENGETO
 SQL Projekt
-
-
 Kupní síla v České republice
-
 Obsah
 1. Zadání projektu
 2. Výzkumné otázky
@@ -18,37 +15,42 @@ Obsah
 2. Výzkumné otázky
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 - z dlouhodobého hlediska rostou mzdy ve všech odvětvích
-- z roku na rok v některých odvětvích klesly, viz tabulka a přiložený pomocný excel soubor.
+- z roku na rok v některých odvětvích klesly, viz tabulka a přiložený pomocný excel soubor
 
 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
-- chléb 2006: 740 ks, 2018: 859 ks
-- mléko 2006: 893 ks, 2018: 1090 ks
+- chléb 2006: 723 ks, 2018: 916 ks
+- mléko 2006: 871 ks, 2018: 1117 ks
 
 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
-- bohužel nebylo možné zodpovědět otázku, protože localhost v DBeaveru nefungoval dostatečně a dotaz se nedokončil
+- Jogurt bílý netučný.
 
 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
-- bohužel nebylo možné zodpovědět otázku, protože localhost v DBeaveru nefungoval dostatečně a dotaz se nedokončil
+- ano, bylo to v letech 2014 (z roku 2013) a 2018 (z roku 2017)
 
 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
-- bohužel nebylo možné zodpovědět otázku, protože localhost v DBeaveru nefungoval dostatečně a dotaz se nedokončil
+- jelikož pro výrazný růst nebyl stanoven přesný koeficient v úkolu č. 5, byl stanoven při vypracování na limit 5 % a v takovém případě je odpověď ano:
+- v r. 2007 vzrostl GDP o 5,6 %, to ovlivnilo v témže i následujícím roce růst mezd a pokles cen
+- v r. 2015 vzrostl GDP o 5,4 %, to ovlivnilo v témže roce pokles cen a v následujícím mírnější růst mezd
+- v r. 2017 vzrostl GDP o 5,2 %, to ovlivnilo v témže roce výrazný růst mezd, avšak v následujícím se zvýšily i ceny.
 
 3. Výstup
-	Dvě tabulky v databázi, ze kterých se požadovaná data dají získat. t_Lenka_Oumrtova_project_SQL_primary_final (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky) 
-t_Lenka_Oumrtova_project_SQL_secondary_final (pro dodatečná data o dalších evropských státech).
-	Dále sada SQL, která z připravených tabulek získá datový podklad k zodpovězení na vytyčené výzkumné otázky. Pozor, otázky/hypotézy mohou být výstupy podporovány i vyvraceny! Záleží na tom, co říkají data.
+	Dvě tabulky v databázi, ze kterých se požadovaná data dají získat. t_Lena_Oumrtova_project_SQL_primary_final (pro data mezd a cen potravin za Českou republiku sjednocených na totožné porovnatelné období – společné roky) 
+t_Lena_Oumrtova_project_SQL_secondary_final (pro dodatečná data o dalších evropských státech).
+	Dále sada SQL, která z připravených tabulek získá datový podklad k zodpovězení na vytyčené výzkumné otázky. 
+Project_SQL_Task_N1
+Project_SQL_Task_N2
+Project_SQL_Task_N3
+Project_SQL_Task_N4
+Project_SQL_Task_N5
 
 4. Poznámky k řešení
-- tvorba tabulky s českými daty
-	- k datové sadě czechia_payroll je nutné připojit pro lepší orientaci:
-		- sadu s názvy odvětví czechia_payroll_industry_branch
-		- sadu s názvy jednotek czechia_payroll_unit
-		- sadu s názvy typů hodnot czechia_payroll_value_type
-	- připojit také informace o cenách potravin czechia_price a jejich kategoriích pro lepší 	přehlednost czechia_price_category
+Tvorba tabulky s českými daty _primary_final: 
+- byly vytvořeny dvě samostatné tabulky payroll a prices, z nichž každá byla již předdefinována
+- k tabulce czechia_payroll byla připojena pro lepší orientaci tabulka s názvy odvětví czechia_payroll_industry_branch
+- k tabulce o cenách potravin czechia_price a jejich kategoriích pro lepší přehlednost czechia_price_category
+- obě dílčí tabulky byly následně spojeny ještě s tabulkou economies, která poskytuje ekonomické údaje, pro potřeby tabulky primary_final byly údaje z economies osekány pouze pro Českou republiku
+- přidání tabulky economies proběhlo až při zpracovávání 5. úkolu, protože se tato cesta ukázala nejschůdnější.
 
-- práce s daty k zodpovězení výzkumných otázek
-Otázka č. 1 byla složitá v proveditelnosti dotazu, aby byl jednoduchý, a přitom poskytoval potřebná data. Takový skript se mi bohužel nepodařilo napsat, proto jsem zvolila cestu mnoha jednoduchých skriptů a jejich výsledky zaznamenávala do excelu, kde jsem data dále analyzovala.
-Otázka č. 2 – předpokladem je, že prvním obdobím je rok 2006 a posledním rok 2018. Oba tyto roky jsou hraniční pro údaje mezd a cen.
-Otázky č. 3 – 5, zde mi bohužel nešly načíst dotazy, ačkoli jsem se snažila tím, že jsem DBeaver přeinstalovala, přesto po kratší době začaly i jednoduché dotazy trvat velmi dlouho.
-Problém s localhostem v DBeaveru přetrvával i po kontaktování lektorů.
-
+Práce s daty k zodpovězení výzkumných otázek:
+- po úpravě základní tabulky _primary_final byla již tvorba samotných dotazovacích sql skriptů snazší
+- pro otázky 1, 3 a 5 existuje pomocný excelový soubor, díky kterému byla data následně snáze analyzována.
